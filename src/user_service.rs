@@ -1,5 +1,3 @@
-use std::env;
-
 use crate::model::{User, UserInfo};
 use dotenvy;
 use sqlx::{postgres::PgPoolOptions, Error, PgPool};
