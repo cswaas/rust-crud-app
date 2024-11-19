@@ -37,7 +37,7 @@ impl UserService {
     }
 
     pub async fn create_user(&self, user: UserInfo) -> Result<(), Error> {
-        sqlx::query("INSERT INTO users (name, ocupation, email, phone) VALUES ($1, $2, $3, $4)")
+        sqlx::query("INSERT INTO users (name, occupation, email, phone) VALUES ($1, $2, $3, $4)")
             .bind(user.name)
             .bind(user.occupation)
             .bind(user.email)
@@ -49,7 +49,7 @@ impl UserService {
 
     pub async fn update_user(&self, id: i32, user: UserInfo) -> Result<(), Error> {
         sqlx::query(
-            "UPDATE users SET name =$1, ocupation = $2, email = $3, phone =$4 WHERE id = $5",
+            "UPDATE users SET name =$1, occupation = $2, email = $3, phone =$4 WHERE id = $5",
         )
         .bind(user.name)
         .bind(user.occupation)
